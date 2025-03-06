@@ -9,6 +9,12 @@ async function wakeUpServer() { // This function wakes up the server on the node
     }
 }
 
+async function calcBMI()
+{
+    await fetch('https://health-insurance-calc-node-js-hucuece8hvhcgrep.centralus-01.azurewebsites.net/calcBMI');
+
+}
+
 /*
 Example function from Savannah's dice roller:
 
