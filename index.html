@@ -6,6 +6,75 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <h1>Health insurance risk calculator</h1>
+        <h1>Health Insurance Risk Calculator</h1>
+        <form id="customerDataForm">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (lbs):</label>
+                <input type="number" id="weight" name="weight" required min="0" step="0.1">
+            </div>
+
+            <div class="form-group">
+                <label>Height:</label>
+                <div class="height-inputs">
+                    <select id="heightFt" name="heightFt" required>
+                        <option value="">Feet</option>
+                        <option value="2">2 ft</option>
+                        <option value="3">3 ft</option>
+                        <option value="4">4 ft</option>
+                        <option value="5">5 ft</option>
+                        <option value="6">6 ft</option>
+                        <option value="7">7 ft</option>
+                    </select>
+                    <select id="heightIn" name="heightIn" required>
+                        <option value="">Inches</option>
+                        <option value="0">0 in</option>
+                        <option value="1">1 in</option>
+                        <option value="2">2 in</option>
+                        <option value="3">3 in</option>
+                        <option value="4">4 in</option>
+                        <option value="5">5 in</option>
+                        <option value="6">6 in</option>
+                        <option value="7">7 in</option>
+                        <option value="8">8 in</option>
+                        <option value="9">9 in</option>
+                        <option value="10">10 in</option>
+                        <option value="11">11 in</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Family History:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="diabetes" name="familyHistory" value="diabetes">
+                    <label for="diabetes">Diabetes</label>
+                    
+                    <input type="checkbox" id="cancer" name="familyHistory" value="cancer">
+                    <label for="cancer">Cancer</label>
+                    
+                    <input type="checkbox" id="alzheimers" name="familyHistory" value="alzheimers">
+                    <label for="alzheimers">Alzheimer's</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bloodPressure">Blood Pressure:</label>
+                <select id="bloodPressure" name="bloodPressure" required>
+                    <option value="">Select Blood Pressure</option>
+                    <option value="normal">Normal (120/80)</option>
+                    <option value="elevated">Elevated (120-129/80)</option>
+                    <option value="stage1">Stage 1 (130-139/80-89)</option>
+                    <option value="stage2">Stage 2 (140+/90+)</option>
+                    <option value="Crisis">Crisis (180+/120+)</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate Risk</button>
+        </form>
     </body>
 </html>
