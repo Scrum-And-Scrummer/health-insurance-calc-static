@@ -20,3 +20,59 @@ async function rollDie(initialRoll = false, isPlayer = true) {
         const roll = data.roll;
         ...
 }*/
+
+// Replace with your Azure API URL
+const API_URL = 'YOUR_AZURE_API_URL';
+
+async function submitForm(event) {
+    // Prevent the default form submission behavior - refreshing the page when the user clicks the button
+    event.preventDefault();   
+
+    // Get form values
+    const age = document.getElementById('age').value;
+    const weight = document.getElementById('weight').value;
+    const heightFt = document.getElementById('heightFt').value;
+    const heightIn = document.getElementById('heightIn').value;
+    
+    // Get selected family history conditions
+    const familyHistory = Array.from(document.querySelectorAll('input[name="familyHistory"]:checked'))
+        .map(checkbox => checkbox.value);
+    
+    const bloodPressure = document.getElementById('bloodPressure').value;
+
+    // Prepare data for API
+    const data = {
+        age: parseInt(age),
+        weight: parseFloat(weight),
+        heightFt: parseInt(heightFt),
+        heightIn: parseInt(heightIn),
+        familyHistory: familyHistory,
+        bloodPressure: bloodPressure
+    };
+
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        
+        // Display the result
+        const resultArea = document.getElementById('resultArea');
+        const riskResult = document.getElementById('riskResult');
+        resultArea.style.display = 'block';
+        riskResult.textContent = `Risk Assessment: ${result.riskLevel}`;
+        
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error calculating the risk. Please try again.');
+    }
+}

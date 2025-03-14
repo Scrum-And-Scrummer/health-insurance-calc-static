@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Health Insurance Risk Calculator</h1>
-        <form id="customerDataForm">
+        <form id="customerDataForm" onsubmit="return submitForm(event)">
             <div class="form-group">
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" required min="0">
@@ -76,5 +76,12 @@
 
             <button type="submit">Calculate Risk</button>
         </form>
+        
+        <div id="resultArea" class="result-area" style="display: none;">
+            <h2>Risk Assessment Result</h2>
+            <p id="riskResult"></p>
+        </div>
+
+        <script src="calc.js"></script>
     </body>
 </html>
