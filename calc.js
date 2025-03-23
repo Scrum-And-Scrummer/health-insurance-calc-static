@@ -38,12 +38,17 @@ document.getElementById("customerDataForm").addEventListener("submit", async fun
 
         console.log("Risk Response:", riskData);
 
-        // Step 3: Display result
+        // Step 3: Display full summary for agent
         document.getElementById("result").innerHTML = `
-            <h3>Results</h3>
-            <p><strong>BMI:</strong> ${bmi} (${bmiCategory})</p>
-            <p><strong>Total Risk Score:</strong> ${riskData.totalPoints}</p>
-            <p><strong>Risk Category:</strong> ${riskData.riskCategory}</p>
+            <h3>Customer Risk Summary</h3>
+            <ul>
+                <li><strong>Age:</strong> ${age}</li>
+                <li><strong>Weight:</strong> ${weight} lbs</li>
+                <li><strong>Height:</strong> ${feet} ft ${inches} in</li>
+                <li><strong>BMI:</strong> ${bmi} (${bmiCategory})</li>
+                <li><strong>Total Risk Score:</strong> ${riskData.totalPoints}</li>
+                <li><strong>Risk Category:</strong> ${riskData.riskCategory}</li>
+            </ul>
         `;
     } catch (error) {
         console.error("❌ Error calculating risk:", error);
