@@ -25,6 +25,17 @@ h1{
     font-size: 1em;
 }
 
+h2 {
+    text-align: center;
+    color: #D02149;
+    margin-bottom: 30px;
+    font-size: 1em;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
 /* Form Container */
 form {
     background-color: white;
