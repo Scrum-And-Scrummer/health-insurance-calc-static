@@ -11,7 +11,8 @@ body{
     line-height: 1.6;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;;
     align-items: center;
     height: 100vh;
 }
@@ -20,8 +21,8 @@ h1{
     text-align: center;
     background-color:#D02149;
     color: white;
-    margin-bottom: 30px;
-    font-size: 2.5em;
+    margin-bottom: 60px;
+    font-size: 1em;
 }
 
 /* Form Container */
