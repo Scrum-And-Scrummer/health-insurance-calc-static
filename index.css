@@ -5,7 +5,7 @@
 }
 body{
     font-family:'Times New Roman', Times, serif;
-    background: color #034a93;
+    background-color: #f1f2f2;
     text-align: center;
     margin: 20px;
     line-height: 1.6;
@@ -19,10 +19,9 @@ body{
 /* Main Header */
 h1{
     text-align: center;
-    background-color:#D02149;
     color: white;
     margin-bottom: 60px;
-    font-size: 1em;
+    font-size: 2.5em;
 }
 
 h2 {
@@ -40,7 +39,7 @@ p {
 form {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 100%;
     max-width: 600px;
@@ -82,13 +81,21 @@ input[type="number"]:focus, select:focus {
 }
 
 input[type="checkbox"] {
-    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-group {
+    display: flex;        
+    gap: 20px;            
+    justify-content: center;
+    flex-wrap: wrap;      
+    width: 100%;
+    align-items: center;
 }
 
 .checkbox-group label {
-    margin-right: 10px;
-    display:flex;
-    gap: 20px;
+    display:block;
+    margin-bottom: 10px;
 }
 
 .height-inputs {
